@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      天零零，地灵灵，必中码显示：
+    </div>
+    <!-- <button onclick="mustBe()">中了</button> -->
+  </body>
+  <script>
+    window.onload = mustBe();
+    function mustBe() {
+      var i = 1;
+      var box = document.createElement("ul");
+      box.className ="box";
+      var timer = setInterval(() => {  
+        i++;
+        var num = Math.round(Math.random() * 35);
+        if(i > 7 && flagNum.length < 7){
+          window.location.reload();
+        }
+        if (num > 0 && num <= 35) {
+          box.innerHTML += "<li>" + num + "</li>";
+        }
+        if(i > 7){
+          clearInterval(timer)
+        }
+      }, 1000);
+      document.body.appendChild(box);
+    }
+  </script>
+</html>
