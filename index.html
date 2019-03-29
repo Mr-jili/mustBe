@@ -1,18 +1,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>啦啦啦嘿</title>
-    <style>
-      ul,li{
-        list-style: none;
-      }
-      .box{
-        padding: 0;
-        width: 100%;
-      }
-    </style>
+    <link rel="stylesheet" href="./index.css">
   </head>
   <body style="text-align:center;">
     <div>
@@ -39,7 +31,7 @@
         if (num > 0 && num <= 35) {
           i++;
           result.push(num);
-          box.innerHTML += "<li>" + num + "</li>";
+          box.innerHTML += "<li style='color:rgb("+Math.round(Math.random() * 255)+","+Math.round(Math.random() * 255)+","+Math.round(Math.random() * 255)+")'>" + num + "</li>";
         }
         let flagNum = Array.from(new Set(result));
         if (flagNum.length != result.length) {
@@ -50,6 +42,7 @@
         }
       }, 1000);
       document.body.appendChild(box);
+    
     }
   </script>
 </html>
