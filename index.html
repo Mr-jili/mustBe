@@ -17,7 +17,7 @@
       </div>
       <div>
           💴 天零零，地灵灵，啦啦嘿(阿门)显示: 💴 
-      </div>
+      </div>  
       <div>
           💴💴💴💴💴💴💴💴💴💴💴💴💴💴💴
       </div>
@@ -31,9 +31,9 @@
       let box = document.createElement("ul");
       box.className = "box";
       let timer = setInterval(() => {
-        i++;
         let num = Math.round(Math.random() * 35);
         if (num > 0 && num <= 35) {
+          i++;
           result.push(num);
           box.innerHTML += "<li>" + num + "</li>";
         }
