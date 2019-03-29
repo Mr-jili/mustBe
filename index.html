@@ -14,20 +14,23 @@
   <script>
     window.onload = mustBe();
     function mustBe() {
-      var i = 1;
-      var box = document.createElement("ul");
-      box.className ="box";
-      var timer = setInterval(() => {  
+      let result = [];
+      let i = 0;
+      let box = document.createElement("ul");
+      box.className = "box";
+      let timer = setInterval(() => {
         i++;
-        var num = Math.round(Math.random() * 35);
-        if(i > 7 && flagNum.length < 7){
-          window.location.reload();
-        }
+        let num = Math.round(Math.random() * 35);
         if (num > 0 && num <= 35) {
+          result.push(num);
           box.innerHTML += "<li>" + num + "</li>";
         }
-        if(i > 7){
-          clearInterval(timer)
+        let flagNum = Array.from(new Set(result));
+        if (flagNum.length != result.length) {
+          window.location.reload();
+        }
+        if (i > 6) {
+          clearInterval(timer);
         }
       }, 1000);
       document.body.appendChild(box);
